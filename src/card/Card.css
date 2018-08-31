@@ -1,0 +1,12 @@
+.page-container {
+  overflow: auto;
+  background-color: white;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 10%;
+  min-height: 50vh;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px ;
+}
+

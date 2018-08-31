@@ -1,0 +1,16 @@
+.portal-container {
+	background-color: #57B99D;
+	min-height: 100vh;
+}
+
+.text-container {
+  overflow: auto;
+  text-color: #303E4E;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  padding: 7%;
+  min-height: 10vh;
+  text-align: center;
+  font-size: 5px;
+}

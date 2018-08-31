@@ -1,0 +1,42 @@
+.navbar {
+	background-color: #303E4E;
+	font-weight: 700;
+	font-size: 24;
+	min-height:150px !important;
+}
+
+.navbar-brand {
+	color: #fff;
+	font-size: 2.5rem!important;
+}
+
+.login-button {
+	font-family: "Futura", sans-serif;
+	color: #303E4E;
+	border-color: #303E4E;
+	background-color: white;
+}
+
+.login-button:hover {
+	background-color: transparent;
+	border-color: white;
+}
+
+.about-button {
+	font-family: "Futura", sans-serif;
+	color: white;
+	vertical-align: bottom;
+	padding-bottom: 0px;
+	padding-right: 25px;
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.about-button:hover {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255,102,203);
+}

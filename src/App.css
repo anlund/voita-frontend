@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Futura", sans-serif;  
+}
+
+p, li {
+  font-family: "Futura-light", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #303E4E;
+}
+
+a, a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+// Removes margins automatically added by browsers in -webkit-margin.
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Futura-light", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #303E4E;
+}
+
+h2 {
+  font-family: "Futura", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #303E4E;
+}
+
+h3 {
+  font-family: "Futura-light", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #303E4E;
+}
