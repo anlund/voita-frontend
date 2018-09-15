@@ -1,6 +1,7 @@
 import React from 'react';
 import {Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import {Container, Row, Col} from "reactstrap";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 interface State {
     swishRequest: SwishRequest;
@@ -42,11 +43,11 @@ export class InputForm extends React.Component<object, State> {
     event.preventDefault();
 
     const data = JSON.stringify(this.state.swishRequest);
-    const randomString = Math.random().toString(36).substring(2, 5) + Math.random().toString(36).substring(2,5);
+    const urlString = "swish://payment?data=" + encodeURIComponent(data);
     
-    
-    this.setState({url: "swish://payment?data=" + encodeURIComponent(data)});
-    this.setState({textMessage: "Hej! Pls när du har tid betal gärna " + this.state.swishRequest.message.value + " på " + this.state.swishRequest.amount.value + " kr via " + "voita.se/" + randomString});
+    this.setState({copied: false});
+    this.setState({url: urlString});
+    this.setState({textMessage: "Hej! Pls när du har tid betala gärna " + this.state.swishRequest.message.value + " på " + this.state.swishRequest.amount.value + " kr via " + urlString});
   }
 
   getInitialState() {
@@ -57,7 +58,8 @@ export class InputForm extends React.Component<object, State> {
                        "amount": {"value" : null, "required" : true},
                        "message": {"value" : "", "required" : true}
                      },
-        textMessage: ""
+        textMessage: "",
+        copied: false
     };
   } 
 
@@ -78,6 +80,10 @@ export class InputForm extends React.Component<object, State> {
     req.message.value = event.target.value;
     this.setState({swishRequest: req})
   }
+
+  onCopy = () => {
+    this.setState({copied: true});
+  };
 
   render() {
     return (
@@ -102,11 +108,14 @@ export class InputForm extends React.Component<object, State> {
                 </Form>
               </Col>
               <Col lg={{size: 6, offset: 1}} sm={{size: 6}} md={{size: 6}}>
+                <CopyToClipboard onCopy={this.onCopy} text={this.state.textMessage}>
                 <div className="genereated-message" >
-                    <Label>
-                      <a href={this.state.url}>{this.state.textMessage}</a>
-                    </Label>
-                </div>        
+                  <section className="copy-text">
+                    {this.state.copied ? <span>Kopierad</span> : null}
+                  </section>
+                  {this.state.textMessage}
+                </div>
+                </CopyToClipboard>
             </Col>
           </Row>
         </Container>
