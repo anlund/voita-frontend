@@ -8,4 +8,8 @@ This is a sandbox project to try out some React coding.
 $ npm install
 $ npm start
 ```
+## Deploy to GCP
 
+```
+gcloud app deploy
+```
